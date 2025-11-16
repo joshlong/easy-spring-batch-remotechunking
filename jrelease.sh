@@ -31,7 +31,7 @@ git commit -am "releasing ${RELEASE_VERSION}" # release the main version
 
 ## RELEASE
 echo "releasing..."
-mvn -Ppublish jreleaser:release -N -pl :feed-spring-boot-starter-root
+mvn -Ppublish jreleaser:release -N -pl :easy-spring-batch-remotechunking-spring-boot-starter
 
 # clean up the mess we made.
 rm -rf $HOME/.jreleaser/{private,public}
