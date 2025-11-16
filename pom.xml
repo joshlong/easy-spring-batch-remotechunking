@@ -132,12 +132,12 @@
                     <plugin>
                         <groupId>org.jreleaser</groupId>
                         <artifactId>jreleaser-maven-plugin</artifactId>
-                        <version>1.14.0</version>
+                        <version>1.21.0</version>
                         <configuration>
                             <jreleaser>
                                 <release>
                                     <github>
-                                        <branch>master</branch>
+                                        <branch>main</branch>
                                     </github>
                                 </release>
                                 <signing>
