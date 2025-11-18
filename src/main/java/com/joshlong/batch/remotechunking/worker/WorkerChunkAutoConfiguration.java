@@ -47,10 +47,12 @@ class WorkerChunkAutoConfiguration {
 
 	@Bean
 	@SuppressWarnings("unchecked")
-	IntegrationFlow chunkProcessorChunkHandlerIntegrationFlow(DirectChannel workerRepliesMessageChannel,
+	IntegrationFlow chunkProcessorChunkHandlerIntegrationFlow(
+			@WorkerInboundChunkChannel DirectChannel workerRequestsMessageChannel,
+			@WorkerOutboundChunkChannel DirectChannel workerRepliesMessageChannel,
 			ChunkProcessorChunkHandler<Object> chunkProcessorChunkHandler) {
 		return IntegrationFlow//
-			.from(workerRequestsMessageChannel())//
+			.from(workerRequestsMessageChannel)//
 			.handle(message -> {
 				try {
 					var payload = message.getPayload();
